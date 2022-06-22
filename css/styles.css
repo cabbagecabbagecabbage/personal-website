@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+/* 
+font-size: rem
+width: % in combination with a max-width, ch
+height: use a min-height if necessary
+padding/margin: rem or em
+media queries: em
+*/
+
+:root {
+    --gray: #adadad;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    font-family: Lato, sans-serif;
+}
+
+header {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    padding: 0.75rem;
+    background-color: aliceblue;
+}
+
+header img {
+    height: 3rem;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 1rem;
+}
+
+nav a {
+    padding: 1rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: var(--gray);
+}
