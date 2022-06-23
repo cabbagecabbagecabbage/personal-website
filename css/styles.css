@@ -16,12 +16,41 @@ media queries: em
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+    background: #fff;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
+    background: #adadad; 
+    border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4A4A4A; 
+}
+
+@supports (scrollbar-color: #4A4A4A #adadad){
+    * {
+        scrollbar-color: #4A4A4A #adadad;
+    }
+}
 
 body {
-    padding: 0;
-    margin: 0;
+    margin: 0 auto;
     background-color: #fff;
     font-family: Lato, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.landing {
+    height: 100vh;
 }
 
 header {
@@ -30,6 +59,10 @@ header {
     justify-content: space-between;
     padding: 0.75rem;
     background-color: aliceblue;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    height: fit-content;
 }
 
 header img {
@@ -39,6 +72,7 @@ header img {
 nav {
     display: flex;
     align-items: center;
+    
 }
 
 nav ul {
@@ -46,7 +80,6 @@ nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    margin-right: 1rem;
 }
 
 nav a {
@@ -57,4 +90,93 @@ nav a {
 
 a:hover {
     color: var(--gray);
+}
+
+.home-main-section {
+    height: 100%;
+    /* TODO: Improve positioning */
+    margin: 0 20vw 0 20vw;
+    --min: 15ch;
+    --gap: 2rem;
+    display: grid;
+    grid-gap: var(--gap);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+}
+
+.home-main-section div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home-main-section img {
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 0.3rem;
+    width: 15rem;
+    max-width: 100%;
+}
+
+.home-main-section .image-wrapper {
+    padding-bottom: 8rem;
+    align-items: center;
+}
+
+.home-main-section .introduction {
+    padding-bottom: 10rem;
+    align-items: left;
+    min-width: fit-content;
+    min-height: fit-content;
+}
+
+.home-main-section h1 {
+    font-weight: 900;
+    font-size: 2.4rem;
+}
+
+.home-main-section p {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+footer {
+    height: fit-content;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+footer nav {
+    margin: 1.5rem 0 1.5rem 0;
+}
+
+.footer-links {
+    margin: 0 0 0.6rem 0;
+    font-size: 1.3rem;
+}
+
+.footer-links i {
+    margin: 0 1rem 0 1rem;
+}
+
+.footer-links a:hover {
+    opacity: 0.5;
+}
+
+.fa-discord {
+    color: #5865F2;
+}
+
+.fa-github {
+    color: #4e277b;
+}
+
+.fa-envelope {
+    color: #e4a010;
+}
+
+.copyright {
+    margin: 0 0 1rem 0;
+    color: #adadad;
 }

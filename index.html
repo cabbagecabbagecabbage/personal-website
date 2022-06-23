@@ -4,14 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Temporary Favicon TODO: Replace with drawing -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
     <title>Rayton Chen</title>
 </head>
 <body>
-    <header>
-        <a href="">
-            <img src="images/cabbage.png" alt="">
-        </a>
+    <div class="landing">
+        <header>
+            <a href="">
+                <img src="images/cabbage.png" alt="cabbage">
+            </a>
+            <!-- TODO: Make nav bar for mobile -->
+            <nav> 
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Projects</a></li>
+                    <li><a href="">Resume</a></li>
+                    <li><a href="">Blog</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="home-main-section">
+            <div class="image-wrapper">
+                <img src="images/me.jpg" alt="photo of me">
+            </div>
+            <div class="introduction">
+                <h1>Hello, I'm Rayton</h1>
+                <p>Welcome to my website!</p>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
         <nav>
             <ul>
                 <li><a href="">Home</a></li>
@@ -21,6 +57,14 @@
                 <li><a href="">Blog</a></li>
             </ul>
         </nav>
-    </header>
+        <div class="footer-links">
+            <a href=""><i class="fab fa-github"></i></a>
+            <a href=""><i class="fas fa-envelope"></i></a>
+            <a href=""><i class="fab fa-discord"></i></a>
+        </div>
+        <div class="copyright">
+            Copyright © 2022 Rayton Chen
+        </div>
+    </footer>
 </body>
 </html>
