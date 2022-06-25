@@ -1,15 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
-/* 
-font-size: rem
-width: % in combination with a max-width, ch
-height: use a min-height if necessary
-padding/margin: rem or em
-media queries: em
-*/
-
 :root {
     --gray: #adadad;
+
+    --footer-spacing: 0.5rem;
 }
 
 *, *::before, *::after {
@@ -27,7 +21,7 @@ media queries: em
 
 ::-webkit-scrollbar-thumb {
     background: transparent;
-    background: #adadad; 
+    background: var(--gray); 
     border-radius: 100vw;
 }
 
@@ -35,9 +29,9 @@ media queries: em
     background: #4A4A4A; 
 }
 
-@supports (scrollbar-color: #4A4A4A #adadad){
+@supports (scrollbar-color: #4A4A4A var(--gray)){
     * {
-        scrollbar-color: #4A4A4A #adadad;
+        scrollbar-color: #4A4A4A var(--gray);
     }
 }
 
@@ -53,26 +47,35 @@ body {
     height: 100vh;
 }
 
-header {
+/* Main nav bar */
+
+.main-nav {
+    width: 100%;
+    position: absolute;
     display: flex;
     align-content: center;
     justify-content: space-between;
-    padding: 0.75rem;
+    /* TODO: Pick a better colour */
     background-color: aliceblue;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+    box-shadow: 0 3px 3px 0px rgba(0, 0, 0, 0.38);
     height: fit-content;
 }
 
-header img {
+.main-nav img {
     height: 3rem;
+    --transition-property: transform;
+    --transition-duration: 1000ms;
+    transition: var(--transition-property) var(--transition-duration) ease-in-out;
+}
+
+.main-nav img:hover {
+    transform: rotate(360deg);
 }
 
 nav {
     display: flex;
     align-items: center;
-    
 }
 
 nav ul {
@@ -82,19 +85,39 @@ nav ul {
     padding: 0;
 }
 
-nav a {
+nav li a {
     padding: 1rem;
     text-decoration: none;
     color: inherit;
 }
 
-a:hover {
+.toggle-button {
+    position: absolute;
+    top: 1.6rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 35px;
+    height: 30px;
+}
+
+.toggle-button .bar {
+    height: 0.4rem;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+}
+
+
+nav a:hover {
     color: var(--gray);
 }
 
+/* Home main section */
+
 .home-main-section {
-    height: 100%;
-    /* TODO: Improve positioning */
+    height: 100vh;
     margin: 0 20vw 0 20vw;
     --min: 15ch;
     --gap: 2rem;
@@ -110,23 +133,16 @@ a:hover {
 }
 
 .home-main-section img {
-    box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.38);
     border-radius: 0.3rem;
-    width: 15rem;
+    width: 35vh;
     max-width: 100%;
 }
 
 .home-main-section .image-wrapper {
-    padding-bottom: 8rem;
     align-items: center;
 }
 
-.home-main-section .introduction {
-    padding-bottom: 10rem;
-    align-items: left;
-    min-width: fit-content;
-    min-height: fit-content;
-}
 
 .home-main-section h1 {
     font-weight: 900;
@@ -138,26 +154,38 @@ a:hover {
     font-size: 1.5rem;
 }
 
+/* Footer */
+
 footer {
-    height: fit-content;
+    box-shadow: 0 -3px 3px 0px rgba(0, 0, 0, 0.38);
     background-color: aliceblue;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem 0;
 }
 
-footer nav {
-    margin: 1.5rem 0 1.5rem 0;
+.footer-nav {
+    padding: var(--footer-spacing);
 }
 
 .footer-links {
-    margin: 0 0 0.6rem 0;
     font-size: 1.3rem;
+    padding: var(--footer-spacing);
+}
+
+.copyright {
+    color: var(--gray);
+    padding: var(--footer-spacing);
 }
 
 .footer-links i {
-    margin: 0 1rem 0 1rem;
+    padding: 0 1rem;
+}
+
+.footer-links i:hover {
+    transform: scale(1.3);
 }
 
 .footer-links a:hover {
@@ -176,7 +204,38 @@ footer nav {
     color: #e4a010;
 }
 
-.copyright {
-    margin: 0 0 1rem 0;
-    color: #adadad;
+@media (max-width: 600px){
+    .toggle-button {
+        display: flex;
+    }
+    .main-nav-links {
+        display: none;
+        width: 100%;
+    }
+    .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+    }
+    .main-nav-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .main-nav-links li {
+        text-align: center;
+        padding: 0.5rem;
+    }
+    .main-nav-links.active {
+        display: flex;
+    }
+    .footer-nav {
+        display: none;
+    }
+    .home-main-section {
+        margin: 10vh 20vw;
+        grid-gap: 2rem;
+        min-height: calc(100vh - 5rem);
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+    }
 }

@@ -20,13 +20,43 @@
     <title>Rayton Chen</title>
 </head>
 <body>
-    <div class="landing">
-        <header>
+    <header>
+        <nav class="main-nav"> 
             <a href="">
                 <img src="images/cabbage.png" alt="cabbage">
             </a>
-            <!-- TODO: Make nav bar for mobile -->
-            <nav> 
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="main-nav-links">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Projects</a></li>
+                    <li><a href="">Resume</a></li>
+                    <li><a href="">Blog</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="home-main-section">
+        <div class="image-container">
+            <div class="image-wrapper">
+                <img src="images/me.jpg" alt="photo of me">
+            </div>
+        </div>
+        <div class="introduction">
+            <h1>Hello, I'm Rayton</h1>
+            <p>Welcome to my website!</p>
+        </div>
+        
+    </section>
+    
+    <footer>
+        <div>
+            <nav class="footer-nav">
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="">About</a></li>
@@ -35,28 +65,7 @@
                     <li><a href="">Blog</a></li>
                 </ul>
             </nav>
-        </header>
-        <section class="home-main-section">
-            <div class="image-wrapper">
-                <img src="images/me.jpg" alt="photo of me">
-            </div>
-            <div class="introduction">
-                <h1>Hello, I'm Rayton</h1>
-                <p>Welcome to my website!</p>
-            </div>
-        </section>
-    </div>
-    
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Projects</a></li>
-                <li><a href="">Resume</a></li>
-                <li><a href="">Blog</a></li>
-            </ul>
-        </nav>
+        </div>
         <div class="footer-links">
             <a href=""><i class="fab fa-github"></i></a>
             <a href=""><i class="fas fa-envelope"></i></a>
@@ -66,5 +75,6 @@
             Copyright © 2022 Rayton Chen
         </div>
     </footer>
+    <script src="js/script.js" defer></script>
 </body>
 </html>
