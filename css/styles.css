@@ -179,12 +179,8 @@ nav li a {
     align-items: center;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    transform: translateZ(0) scale(1, 1) translateX(-100%) scale(0);
-    animation: slide-in-left 1s forwards 0.2s;
-}
-
-@keyframes slide-in-left {
-    100% {transform: translateX(0%) scale(1);}
+    transform: translateZ(0) scale(1, 1) translateX(130%);
+    animation: img-slide-in 1s ease-in-out forwards;
 }
 
 .introduction div {
@@ -194,12 +190,16 @@ nav li a {
 .introduction {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    transform: translateZ(0) scale(1, 1) translateX(100%) scale(0);
-    animation: slide-in-right 1s forwards 0.2s;
+    opacity: 0;
+    animation: text-fade-in 0.5s ease-in-out forwards 0.8s;
 }
 
-@keyframes slide-in-right {
-    100% {transform: translateX(0%) scale(1);}
+@keyframes img-slide-in {
+    100% {transform: translateX(0%);}
+}
+
+@keyframes text-fade-in {
+    100% {opacity: 1;}
 }
 
 /* Footer */
@@ -279,12 +279,12 @@ footer {
     .main-nav-links li {
         text-align: center;
         padding: 0.5rem;
-        animation: fade-in 2s ease;
+        animation: fade-in 1s ease;
     }
     @keyframes fade-in {
         0%   {opacity: 0;}
         50% {opacity: 0.5;}
-        50% {opacity: 1;}
+        100% {opacity: 1;}
     }
     @keyframes slide-in {
         100% { transform: translateX(0%); }
