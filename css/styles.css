@@ -1,3 +1,15 @@
+/*
+TODO: Figure out how to reuse header and footer across all pages (jquery?)
+TODO: Make About page
+TODO: Make Project page
+TODO: Start hosting static site
+TODO: Set up blog
+
+Misc
+TODO: Pick better colours
+TODO: Ask for design advice
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
 :root {
@@ -35,6 +47,16 @@
     }
 }
 
+.text-large {
+    font-weight: 900;
+    font-size: 2.4rem;
+}
+
+.text-med {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
 body {
     margin: 0 auto;
     background-color: #fff;
@@ -55,11 +77,11 @@ body {
     display: flex;
     align-content: center;
     justify-content: space-between;
-    /* TODO: Pick a better colour */
     background-color: aliceblue;
     padding: 1rem 2rem;
     box-shadow: 0 3px 3px 0px rgba(0, 0, 0, 0.38);
     height: fit-content;
+    z-index: 9999;
 }
 
 .main-nav img {
@@ -71,6 +93,23 @@ body {
 
 .main-nav img:hover {
     transform: rotate(360deg);
+}
+
+.main-nav-links a{
+    line-height: 1.2em;
+    color: #0000;
+    text-shadow: 
+    0 0 #000, 
+    0 -1.2em #0000;
+    overflow: hidden;
+    transition: .2s;
+}
+
+.main-nav-links a:hover {
+    text-shadow: 
+    0 1.2em #0000, 
+    0 0 #fff;
+    background-color: var(--gray);
 }
 
 nav {
@@ -110,9 +149,6 @@ nav li a {
 }
 
 
-nav a:hover {
-    color: var(--gray);
-}
 
 /* Home main section */
 
@@ -141,17 +177,29 @@ nav a:hover {
 
 .home-main-section .image-wrapper {
     align-items: center;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0) scale(1, 1) translateX(-100%) scale(0);
+    animation: slide-in-left 1s forwards 0.2s;
 }
 
-
-.home-main-section h1 {
-    font-weight: 900;
-    font-size: 2.4rem;
+@keyframes slide-in-left {
+    100% {transform: translateX(0%) scale(1);}
 }
 
-.home-main-section p {
-    font-weight: 400;
-    font-size: 1.5rem;
+.introduction div {
+    margin: 0.8rem;
+}
+
+.introduction {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0) scale(1, 1) translateX(100%) scale(0);
+    animation: slide-in-right 1s forwards 0.2s;
+}
+
+@keyframes slide-in-right {
+    100% {transform: translateX(0%) scale(1);}
 }
 
 /* Footer */
@@ -173,6 +221,10 @@ footer {
 .footer-links {
     font-size: 1.3rem;
     padding: var(--footer-spacing);
+}
+
+.footer-nav a:hover {
+    color: var(--gray);
 }
 
 .copyright {
@@ -220,11 +272,35 @@ footer {
     .main-nav-links ul {
         width: 100%;
         flex-direction: column;
+        transform: translateX(-30%);
+        animation: slide-in 1s forwards;
+        text-align: center;
     }
-
     .main-nav-links li {
         text-align: center;
         padding: 0.5rem;
+        animation: fade-in 2s ease;
+    }
+    @keyframes fade-in {
+        0%   {opacity: 0;}
+        50% {opacity: 0.5;}
+        50% {opacity: 1;}
+    }
+    @keyframes slide-in {
+        100% { transform: translateX(0%); }
+    }
+    .main-nav-links a {
+        display: block;
+        width: 60%;
+        min-width: fit-content;
+        padding: 0.5rem 0;
+        margin: 0 auto;
+    }
+    .main-nav-links a:hover {
+        text-shadow: 
+        0 1.2em #0000, 
+        0 0 #fff;
+        background-color: var(--gray);
     }
     .main-nav-links.active {
         display: flex;
