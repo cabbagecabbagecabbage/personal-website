@@ -8,6 +8,8 @@ TODO: Set up blog
 Misc
 TODO: Pick better colours
 TODO: Ask for design advice
+TODO: Configure server to not require .html extension in url and redirect those that do
+
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
@@ -20,6 +22,17 @@ TODO: Ask for design advice
 
 *, *::before, *::after {
     box-sizing: border-box;
+}
+
+.js-loading *,
+.js-loading *:before,
+.js-loading *:after {
+  animation-play-state: paused !important;
+}
+
+section {
+    min-height: 100vh;
+    margin: 0 20vw;
 }
 
 ::-webkit-scrollbar {
@@ -55,6 +68,11 @@ TODO: Ask for design advice
 .text-med {
     font-weight: 400;
     font-size: 1.5rem;
+}
+
+.text-small {
+    font-weight: 400;
+    font-size: 1rem;
 }
 
 body {
@@ -153,8 +171,6 @@ nav li a {
 /* Home main section */
 
 .home-main-section {
-    height: 100vh;
-    margin: 0 20vw 0 20vw;
     --min: 15ch;
     --gap: 2rem;
     display: grid;
@@ -179,8 +195,8 @@ nav li a {
     align-items: center;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    transform: translateZ(0) scale(1, 1) translateX(130%);
-    animation: img-slide-in 1s ease-in-out forwards;
+    transform: translateX(130%);
+    animation: img-slide-in 0.8s ease-in-out forwards 0.5s;
 }
 
 .introduction div {
@@ -191,7 +207,7 @@ nav li a {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     opacity: 0;
-    animation: text-fade-in 0.5s ease-in-out forwards 0.8s;
+    animation: text-fade-in 0.5s ease-in-out forwards 1s;
 }
 
 @keyframes img-slide-in {
@@ -200,6 +216,49 @@ nav li a {
 
 @keyframes text-fade-in {
     100% {opacity: 1;}
+}
+
+/* About */
+
+.about-main-section {
+    --min: 15ch;
+    --gap: 2rem;
+    /* display: grid;
+    grid-gap: var(--gap);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr)); */
+    margin: 0 14vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-main-section .about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 2rem;
+    max-width: 800px;
+}
+
+.about-main-section .about-text h1 {
+    margin: 1rem 0;
+}
+
+.about-main-section .about-text p {
+    line-height: 1.5;
+}
+
+.about-main-section .about-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 2rem;
+}
+
+.about-main-section .about-img img {
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.38);
+    width: max(16vw,220px);
 }
 
 /* Footer */
@@ -311,7 +370,20 @@ footer {
     .home-main-section {
         margin: 10vh 20vw;
         grid-gap: 2rem;
-        min-height: calc(100vh - 5rem);
         grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+    }
+    .about-main-section .about-img img {
+        width: 60vw;
+    }
+}
+
+@media (max-width: 800px){
+    .about-main-section {
+        margin: 10vh 10vw;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .about-main-section .about-text {
+        padding-bottom: 2rem;
     }
 }
