@@ -1,13 +1,11 @@
 /*
-TODO: Figure out how to reuse header and footer across all pages (jquery?)
-TODO: Make About page
-TODO: Make Project page
-TODO: Start hosting static site
+TODO: Coloured card backgrounds
+TODO: Improve responsiveness
+TODO: Make social icon links bigger?
+TODO: Prevent text from disappearing behind nav bar in horizontal phone (about section). padding top and bottom more?
+TODO: Remove shadow from about section image
+TODO: Link my resume
 TODO: Set up blog
-
-Misc
-TODO: Pick better colours
-TODO: Ask for design advice
 TODO: Configure server to not require .html extension in url and redirect those that do
 
 */
@@ -106,10 +104,10 @@ body {
     align-content: center;
     justify-content: space-between;
     background-color: aliceblue;
-    padding: 1rem 2rem;
     box-shadow: 0 3px 3px 0px rgba(0, 0, 0, 0.38);
     height: fit-content;
     z-index: 9999;
+    padding: 1rem 10rem;
 }
 
 .main-nav img {
@@ -121,6 +119,21 @@ body {
 
 .main-nav img:hover {
     transform: rotate(360deg);
+}
+
+.nav-cabbage-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-cabbage-name > h1 {
+    margin: 0 1rem;
+    color: black;
+}
+
+.main-nav > a{
+    text-decoration: none;
 }
 
 .main-nav-links a{
@@ -385,7 +398,7 @@ footer {
     color: #e4a010;
 }
 
-@media (max-width: 600px){
+@media (max-width: 800px){
     .toggle-button {
         display: flex;
     }
@@ -455,5 +468,11 @@ footer {
     }
     .about-main-section .about-text {
         padding-bottom: 2rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    .nav-cabbage-name > h1 {
+        display: none;
     }
 }
