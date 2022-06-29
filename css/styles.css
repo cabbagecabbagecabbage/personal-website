@@ -1,12 +1,14 @@
 /*
 TODO: Link my resume
 TODO: Set up blog
-TODO: Configure server to not require .html extension in url and redirect those that do
+TODO: Find a font
 TODO: Can remove .html suffix?
 
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap');
 
 :root {
     --gray: #adadad;
@@ -64,7 +66,7 @@ p {
 }
 
 .text-large {
-    font-weight: 900;
+    font-weight: 600;
     font-size: 2.4rem;
 }
 
@@ -80,7 +82,7 @@ p {
 
 body {
     margin: 0 auto;
-    font-family: Lato, sans-serif;
+    font-family: 'Baloo 2', Righteous, Lato, sans-serif;
     display: flex;
     flex-direction: column;
 }
@@ -282,15 +284,18 @@ nav li a {
     flex-direction: column;
     justify-content: center;
     max-width: 700px;
+    padding: 3rem;
     /* text-align: justify; */
 }
 
 .about-text h1 {
     margin-bottom: 2rem;
+    /* text-align: center; */
 }
 
 .about-text p {
     line-height: 1.5;
+    text-align: justify;
 }
 
 .about-img {
@@ -405,10 +410,11 @@ footer {
 }
 
 .footer-links i {
-    padding: 0 1rem;
+    margin: 0 1rem;
+    padding: 0.2rem;
 }
 
-.footer-links i:hover {
+.footer-links a:hover i {
     transform: scale(1.3);
 }
 
