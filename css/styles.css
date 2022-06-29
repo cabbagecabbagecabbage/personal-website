@@ -4,6 +4,7 @@ TODO: Improve responsiveness
 TODO: Link my resume
 TODO: Set up blog
 TODO: Configure server to not require .html extension in url and redirect those that do
+TODO: Can remove .html suffix?
 
 */
 
@@ -33,11 +34,6 @@ p {
 .js-loading *:before,
 .js-loading *:after {
   animation-play-state: paused !important;
-}
-
-section {
-    min-height: 100vh;
-    margin: 0 15vw;
 }
 
 ::-webkit-scrollbar {
@@ -82,10 +78,21 @@ section {
 
 body {
     margin: 0 auto;
-    background-color: #fff;
     font-family: Lato, sans-serif;
     display: flex;
     flex-direction: column;
+}
+
+section {
+    min-height: 100vh;
+    margin: 0 15vw;
+}
+
+@media (min-width: 1300px) {
+    section {
+        background-color: #fafafa;
+        border: 1px solid #ccc;    
+    }
 }
 
 .landing {
@@ -96,6 +103,7 @@ body {
     background-color: aliceblue;
     padding: 2rem;
     border-radius: 0.5rem;
+    /* border: 1px solid black; */
 }
 
 /* Main nav bar */
@@ -107,7 +115,7 @@ body {
     align-content: center;
     justify-content: space-between;
     background-color: aliceblue;
-    box-shadow: 0 3px 3px 0px rgba(0, 0, 0, 0.38);
+    box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.38);
     height: fit-content;
     z-index: 9999;
     padding: 1rem 15vw;
@@ -201,8 +209,8 @@ nav li a {
 /* Home main section */
 
 .home-main-section {
-    --min: 15ch;
-    --gap: 2rem;
+    --min: 27ch;
+    --gap: 5rem;
     display: grid;
     grid-gap: var(--gap);
     grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
@@ -217,12 +225,12 @@ nav li a {
 .home-main-section img {
     box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.38);
     border-radius: 0.3rem;
-    width: 35vh;
+    width: 40vh;
     max-width: 100%;
 }
 
 .home-main-section .image-wrapper {
-    align-items: center;
+    align-items: flex-end;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     transform: translateX(100%);
@@ -230,7 +238,12 @@ nav li a {
 }
 
 .introduction div {
-    margin: 0.8rem;
+    margin: 0.8rem 0;
+}
+
+.introduction > .background-card {
+    /* margin-right: 8rem; */
+    width: fit-content;
 }
 
 .introduction {
@@ -251,27 +264,28 @@ nav li a {
 /* About */
 
 .about-main-section {
-    --min: 15ch;
-    --gap: 2rem;
-    /* display: grid;
-    grid-gap: var(--gap);
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr)); */
-    padding: 5rem 0;
+    padding: 5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.about-main-section > .vertical-separator {
+    margin: 0 3rem;
+    height: 60vh;
+    border-left: 1px solid #ccc;
 }
 
 .about-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 2rem;
     max-width: 700px;
+    /* text-align: justify; */
 }
 
 .about-text h1 {
-    margin: 2rem 0;
+    margin-bottom: 2rem;
 }
 
 .about-text p {
@@ -283,7 +297,7 @@ nav li a {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    padding: 0 2rem;
+    border: 1px solid #ccc;
 }
 
 .about-img img {
@@ -310,7 +324,7 @@ nav li a {
     display: grid;
     grid-gap: var(--gap);
     grid-template-columns: repeat(auto-fit, minmax(var(--min), 1fr));
-    padding: 0;
+    padding: 0 5rem;
     margin-bottom: 5rem;
 }
 
@@ -354,13 +368,21 @@ nav li a {
 /* Footer */
 
 footer {
-    box-shadow: 0 -3px 3px 0px rgba(0, 0, 0, 0.38);
     background-color: aliceblue;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     padding: 1rem 0;
+    /* margin: 0 15vw;
+    border: 1px solid #ccc; */
+}
+
+@media (min-width: 1300px) {
+    footer {
+        margin: 0 15vw;
+        border: 1px solid #ccc;
+    }
 }
 
 .footer-nav {
@@ -459,7 +481,7 @@ footer {
         display: none;
     }
     .home-main-section {
-        margin: 10vh 20vw;
+        margin: 0 20vw;
         grid-gap: 2rem;
         grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
     }
@@ -468,7 +490,7 @@ footer {
     }
 }
 
-@media (max-width: 517px) {
+@media (max-width: 830px) {
     .home-main-section .image-wrapper {
         transform: translateY(100%);
     }
@@ -477,11 +499,31 @@ footer {
 @media (max-width: 800px){
     .about-main-section {
         margin: 10vh 10vw;
+        padding: 5rem 1rem;
         flex-wrap: wrap;
         justify-content: center;
     }
     .about-main-section .about-text {
         padding-bottom: 2rem;
+    }
+    .vertical-separator {
+        display: none;
+    }
+}
+
+@media (max-width: 830px){
+    .home-main-section {
+        padding: 10vmax 0;
+    }
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .introduction {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
