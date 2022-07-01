@@ -295,7 +295,7 @@ nav li a {
 
 .about-text p {
     line-height: 1.5;
-    text-align: justify;
+    /* text-align: justify; */
 }
 
 .about-img {
