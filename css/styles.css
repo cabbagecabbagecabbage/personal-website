@@ -97,6 +97,9 @@ section {
         background-color: #fafafa;
         border: 1px solid #ccc;    
     }
+    .projects-grid {
+        padding: 0 5rem;
+    }
 }
 
 .landing {
@@ -244,16 +247,16 @@ nav li a {
     margin: 0.8rem 0;
 }
 
-.introduction > .background-card {
-    /* margin-right: 8rem; */
-    width: fit-content;
-}
 
 .introduction {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     opacity: 0;
     animation: text-fade-in 0.5s ease-in-out forwards 0.8s;
+}
+
+.introduction > .text-large {
+    line-height: 3rem;
 }
 
 @keyframes img-slide-in {
@@ -330,7 +333,6 @@ nav li a {
     display: grid;
     grid-gap: var(--gap);
     grid-template-columns: repeat(auto-fit, minmax(var(--min), 1fr));
-    padding: 0 5rem;
     margin-bottom: 5rem;
 }
 
@@ -342,7 +344,7 @@ nav li a {
 }
 
 .projects-grid > a:hover {
-    transform: scale(1.01);
+    transform: scale(1.02);
 }
 
 .project-card {
@@ -487,38 +489,21 @@ footer {
     .footer-nav {
         display: none;
     }
-    .home-main-section {
-        margin: 0 20vw;
-        grid-gap: 2rem;
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
-    }
+    
     .about-main-section .about-img img {
         width: 60vw;
     }
 }
 
-@media (max-width: 830px) {
+@media (max-width: 856px) {
+    .home-main-section {
+        margin: 0 20vw;
+        grid-gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+    }
     .home-main-section .image-wrapper {
         transform: translateY(100%);
     }
-}
-
-@media (max-width: 800px){
-    .about-main-section {
-        margin: 10vh 10vw;
-        padding: 5rem 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .about-main-section .about-text {
-        padding-bottom: 2rem;
-    }
-    .vertical-separator {
-        display: none;
-    }
-}
-
-@media (max-width: 830px){
     .home-main-section {
         padding: 10vmax 0;
     }
@@ -531,6 +516,21 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+}
+
+@media (max-width: 1200px){
+    .about-main-section {
+        margin: 10vh 10vw;
+        padding: 5rem 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .about-main-section .about-text {
+        padding-bottom: 2rem;
+    }
+    .vertical-separator {
+        display: none;
     }
 }
 
