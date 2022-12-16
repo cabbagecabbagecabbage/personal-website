@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
 
     <!-- Title -->
     <title>Rayton Chen</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -29,33 +31,32 @@
     <!-- JS -->
     <script src="js/script.js" defer></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function(event) {
-            document.body.classList.add('js-loading');
+      document.addEventListener("DOMContentLoaded", function (event) {
+        document.body.classList.add("js-loading");
 
-            window.addEventListener("load", showPage);
+        window.addEventListener("load", showPage);
 
-            function showPage() {
-                document.body.classList.remove('js-loading');
-            }
-        });
+        function showPage() {
+          document.body.classList.remove("js-loading");
+        }
+      });
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <header id="header"></header>
 
     <section class="home-main-section">
-        <div class="image-container">
-            <div class="image-wrapper">
-                <img src="images/me.jpg" alt="photo of me">
-            </div>
+      <div class="image-container">
+        <div class="image-wrapper">
+          <img src="images/me.jpg" alt="photo of me" />
         </div>
-        <div class="introduction">
-            <div class="text-large">Hello, I'm Rayton</div>
-            <div class="text-med">Welcome to my website!</div>
-        </div>
-        
+      </div>
+      <div class="introduction">
+        <div class="text-large">Hello, I'm Rayton</div>
+        <div class="text-med">Welcome to my website!</div>
+      </div>
     </section>
 
     <footer id="footer"></footer>
-</body>
+  </body>
 </html>
