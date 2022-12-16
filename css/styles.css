@@ -228,7 +228,7 @@ nav li a {
   align-items: flex-end;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  transform: translateX(100%);
+  transform: translateX(70%);
   animation: img-slide-in 0.7s ease-in-out forwards 0.2s;
 }
 
